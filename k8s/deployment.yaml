@@ -1,0 +1,21 @@
+  apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microservice-arquitetura-hexagonal
+spec:
+  selector:
+    matchLabels:
+      app: microservice-arquitetura-hexagonal
+  template:
+    metadata:
+      labels:
+        app: microservice-arquitetura-hexagonal
+    spec:
+      dnsConfig:
+        options:
+          - name: single-request-reopen
+      containers:
+        - name: microservice-arquitetura-hexagonal
+          image: odilio/microservice-arquitetura-hexagonal
+          ports:
+            - containerPort: 8090

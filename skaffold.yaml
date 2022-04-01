@@ -1,0 +1,9 @@
+apiVersion: skaffold/v2beta23
+kind: Config
+metadata:
+  name: microservice-arquitetura-hexagonal
+build:
+  artifacts:
+    - image: odilio/microservice-arquitetura-hexagonal
+      jib:
+        project: com.arquitetura:hexagonal
