@@ -10,13 +10,11 @@ Crie uma imagem com o JIB usando o comando `mvn compile jib:build`.
 Tendo ambiente montado, podemos efetuar o deploy ou executar em modo dev 
 usando a ferramenta do Google [skaffold](https://skaffold.dev/) com o comando `skaffold dev --port-forward`
 
-Mais informações detalhadas na [wiki](https://wiki.softfocus.com.br/books/credilab-for-developers-019/page/stack-javakotlin)
-
 #Ambientes de homologação e produção
 O arquivo application.yml deve ser removido do projeto ao finalizar a fase de desenvolvimento.
 
 Um novo arquivo com o nome do microsserviço (ex: microservice-boilerplate.yml) deve ser criado em todas as branches 
-do projeto [microservice-properties-v2](https://bitbucket.org/softfocusbr/microservice-properties-v2/)
+do projeto [microservice-properties-v2]
 
 # Informações extras
 
