@@ -10,11 +10,12 @@ interface BoilerplateServicePort {
 
     fun buscarPorCodigo(codigo: Long): BoilerplateDTO?
 
-    fun listarTodos(spec: Specification<BoilerplateEntity?>?, page: Pageable?): Page<BoilerplateDTO?>?
+    fun listarTodos(spec: Specification<BoilerplateEntity>?, page: Pageable?): Page<BoilerplateDTO>
 
-    fun listarFiltrandoTodosCampos(search: String?, page: Pageable?): Page<BoilerplateDTO?>?
+    fun listarFiltrandoTodosCampos(search: String?, page: Pageable?): Page<BoilerplateDTO>
 
     fun salvarBoilerplate(boilerplateDTO: BoilerplateDTO): BoilerplateDTO
 
     fun removerBoilerplate(id: Long)
 }
+

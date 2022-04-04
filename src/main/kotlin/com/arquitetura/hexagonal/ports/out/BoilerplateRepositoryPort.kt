@@ -9,7 +9,7 @@ interface BoilerplateRepositoryPort {
 
     fun findByIdOrNull(codigo: Long): BoilerplateEntity?
 
-    fun findAll(spec: Specification<BoilerplateEntity?>?, page: Pageable?): Page<BoilerplateEntity>?
+    fun findAll(spec: Specification<BoilerplateEntity>?, page: Pageable?): Page<BoilerplateEntity>
 
     fun findAllFields(search: String?, page: Pageable?): Page<BoilerplateEntity>
 

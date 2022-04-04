@@ -19,7 +19,7 @@ class BoilerplateController {
     private lateinit var service: BoilerplateServicePort
 
     @GetMapping(value = ["/v1/"])
-    fun listarBoilerplate(@RequestParam search: String?, page: Pageable?): Page<BoilerplateDTO?>? {
+    fun listarBoilerplate(@RequestParam search: String?, page: Pageable?): Page<BoilerplateDTO> {
         return if (search?.isNotBlank() == true)
             service.listarFiltrandoTodosCampos(search, page)
         else

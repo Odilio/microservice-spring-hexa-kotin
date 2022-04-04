@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository
 @Repository
 interface BoilerplateRepository : JpaRepository<BoilerplateEntity, Long> {
 
-    fun findAll(spec: Specification<BoilerplateEntity?>?, page: Pageable?): Page<BoilerplateEntity>
+    fun findAll(spec: Specification<BoilerplateEntity>?, page: Pageable?): Page<BoilerplateEntity>
 
     @Query(
         """

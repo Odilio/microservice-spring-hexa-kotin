@@ -20,7 +20,7 @@ class BoilerplateAdapter: BoilerplateRepositoryPort{
         return boilerplateRepository.findByIdOrNull(codigo)
     }
 
-    override fun findAll(spec: Specification<BoilerplateEntity?>?, page: Pageable?): Page<BoilerplateEntity> {
+    override fun findAll(spec: Specification<BoilerplateEntity>?, page: Pageable?): Page<BoilerplateEntity> {
         return boilerplateRepository.findAll(spec, page)
     }
 

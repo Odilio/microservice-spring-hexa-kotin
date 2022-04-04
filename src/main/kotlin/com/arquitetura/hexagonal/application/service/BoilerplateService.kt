@@ -11,7 +11,7 @@ import org.springframework.data.jpa.domain.Specification
 import org.springframework.stereotype.Service
 
 @Service
-class BoilerplateService: BoilerplateServicePort{
+class BoilerplateService: BoilerplateServicePort {
 
     @Autowired
     private lateinit var boilerplateRepository: BoilerplateRepositoryPort
@@ -20,16 +20,18 @@ class BoilerplateService: BoilerplateServicePort{
         return boilerplateRepository.findByIdOrNull(codigo)?.let { BoilerplateDTO(it) }
     }
 
-    override fun listarTodos(spec: Specification<BoilerplateEntity?>?, page: Pageable?): Page<BoilerplateDTO?>? {
-        return boilerplateRepository.findAll(spec, page)?.map { BoilerplateDTO(it) }
+    override fun listarTodos(spec: Specification<BoilerplateEntity>?, page: Pageable?): Page<BoilerplateDTO> {
+        return boilerplateRepository.findAll(spec, page).map { BoilerplateDTO(it) }
     }
 
-    override fun listarFiltrandoTodosCampos(search: String?, page: Pageable?): Page<BoilerplateDTO?>? {
-        return boilerplateRepository.findAllFields(search, page)?.map { BoilerplateDTO(it!!) }
+    override fun listarFiltrandoTodosCampos(search: String?, page: Pageable?): Page<BoilerplateDTO> {
+        return boilerplateRepository.findAllFields(search, page).map { BoilerplateDTO(it) }
     }
 
     override fun salvarBoilerplate(boilerplateDTO: BoilerplateDTO): BoilerplateDTO {
-        return BoilerplateDTO(boilerplateRepository.save(boilerplateDTO.toEntity()))
+        return BoilerplateDTO(
+            boilerplateRepository.save(boilerplateDTO.toEntity())
+        )
     }
 
     override fun removerBoilerplate(id: Long) {
