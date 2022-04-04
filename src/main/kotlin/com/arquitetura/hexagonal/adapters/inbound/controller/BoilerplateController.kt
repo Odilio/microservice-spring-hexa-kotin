@@ -1,7 +1,7 @@
 package com.arquitetura.hexagonal.adapters.inbound.controller
 
 import com.arquitetura.hexagonal.adapters.dto.BoilerplateDTO
-import com.arquitetura.hexagonal.application.service.BoilerplateService
+import com.arquitetura.hexagonal.ports.`in`.BoilerplateServicePort
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*
 class BoilerplateController {
 
     @Autowired
-    private lateinit var service: BoilerplateService
+    private lateinit var service: BoilerplateServicePort
 
     @GetMapping(value = ["/v1/"])
     fun listarBoilerplate(@RequestParam search: String?, page: Pageable?): Page<BoilerplateDTO?>? {
