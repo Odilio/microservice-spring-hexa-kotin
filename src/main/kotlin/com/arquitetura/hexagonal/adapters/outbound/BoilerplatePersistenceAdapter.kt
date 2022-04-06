@@ -1,8 +1,8 @@
-package br.com.softfocus.base.adapters.outbound
+package com.arquitetura.hexagonal.adapters.outbound
 
-import br.com.softfocus.base.adapters.outbound.repository.BoilerplateRepository
-import br.com.softfocus.base.application.model.BoilerplateModel
-import br.com.softfocus.base.ports.out.BoilerplatePersistencePort
+import com.arquitetura.hexagonal.adapters.outbound.repository.BoilerplateRepository
+import com.arquitetura.hexagonal.application.model.BoilerplateModel
+import com.arquitetura.hexagonal.ports.out.BoilerplatePersistencePort
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable

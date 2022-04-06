@@ -1,6 +1,7 @@
 package com.arquitetura.hexagonal.service
 
 import com.arquitetura.hexagonal.adapters.dto.BoilerplateDTO
+import com.arquitetura.hexagonal.adapters.dto.BoilerplateMapper
 import com.arquitetura.hexagonal.application.model.BoilerplateModel
 import com.arquitetura.hexagonal.application.service.BoilerplateService
 import com.arquitetura.hexagonal.adapters.outbound.repository.BoilerplateRepository
@@ -42,15 +43,15 @@ class BoilerplateServiceTest {
     private lateinit var service: BoilerplateService
 
     companion object {
-        var results: ArrayList<BoilerplateDTO> = arrayListOf()
+        var results: ArrayList<BoilerplateMapper> = arrayListOf()
         var resultEntitys: ArrayList<BoilerplateModel> = arrayListOf()
-        lateinit var pagedResponse: Page<BoilerplateDTO>
+        lateinit var pagedResponse: Page<BoilerplateMapper>
 
         @BeforeAll
         @JvmStatic
         fun setMockOutput() {
-            results.add(BoilerplateDTO(2, "example", "2022-07-15"))
-            results.add(BoilerplateDTO(4, "example 2", "2022-07-15"))
+            results.add(BoilerplateMapper(2, "example", "2022-07-15"))
+            results.add(BoilerplateMapper(4, "example 2", "2022-07-15"))
             
             resultEntitys.add(BoilerplateModel(2, "example", "2022-07-15".convertStringToDate()))
             pagedResponse = PageImpl(results)
