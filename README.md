@@ -9,3 +9,6 @@ Crie uma imagem com o JIB usando o comando `mvn compile jib:build`.
 
 Tendo ambiente montado, podemos efetuar o deploy ou executar em modo dev 
 usando a ferramenta do Google [skaffold](https://skaffold.dev/) com o comando `skaffold dev --port-forward`
+
+# BLog
+https://medium.com/rapaduratech
