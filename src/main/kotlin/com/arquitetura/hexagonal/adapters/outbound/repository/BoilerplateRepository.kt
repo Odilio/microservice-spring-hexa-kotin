@@ -1,6 +1,6 @@
 package com.arquitetura.hexagonal.adapters.outbound.repository
 
-import com.arquitetura.hexagonal.application.model.BoilerplateEntity
+import com.arquitetura.hexagonal.application.model.BoilerplateModel
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import org.springframework.data.jpa.domain.Specification
@@ -10,9 +10,9 @@ import org.springframework.data.repository.query.Param
 import org.springframework.stereotype.Repository
 
 @Repository
-interface BoilerplateRepository : JpaRepository<BoilerplateEntity, Long> {
+interface BoilerplateRepository : JpaRepository<BoilerplateModel, Long> {
 
-    fun findAll(spec: Specification<BoilerplateEntity>?, page: Pageable?): Page<BoilerplateEntity>
+    fun findAll(spec: Specification<BoilerplateModel>?, page: Pageable?): Page<BoilerplateModel>
 
     @Query(
         """
@@ -25,6 +25,6 @@ interface BoilerplateRepository : JpaRepository<BoilerplateEntity, Long> {
             or to_char(u.dataUltimaAtualizacao, 'yyyy-MM-dd HH:mm:ss') like CONCAT('%',:search,'%')
     """
     )
-    fun findAllFields(@Param("search") search: String?, page: Pageable?): Page<BoilerplateEntity>
+    fun findAllFields(@Param("search") search: String?, page: Pageable?): Page<BoilerplateModel>
 
 }

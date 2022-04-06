@@ -6,7 +6,7 @@ import javax.persistence.*
 
 @Entity
 @Table(name = "boilerplates")
-class BoilerplateEntity(
+class BoilerplateModel(
 
     @Id
     @Column(name = "id")

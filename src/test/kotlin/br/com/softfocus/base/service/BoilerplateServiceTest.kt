@@ -1,7 +1,7 @@
 package com.arquitetura.hexagonal.service
 
 import com.arquitetura.hexagonal.adapters.dto.BoilerplateDTO
-import com.arquitetura.hexagonal.application.model.BoilerplateEntity
+import com.arquitetura.hexagonal.application.model.BoilerplateModel
 import com.arquitetura.hexagonal.application.service.BoilerplateService
 import com.arquitetura.hexagonal.adapters.outbound.repository.BoilerplateRepository
 import com.arquitetura.hexagonal.application.extensions.convertStringToDate
@@ -43,7 +43,7 @@ class BoilerplateServiceTest {
 
     companion object {
         var results: ArrayList<BoilerplateDTO> = arrayListOf()
-        var resultEntitys: ArrayList<BoilerplateEntity> = arrayListOf()
+        var resultEntitys: ArrayList<BoilerplateModel> = arrayListOf()
         lateinit var pagedResponse: Page<BoilerplateDTO>
 
         @BeforeAll
@@ -52,7 +52,7 @@ class BoilerplateServiceTest {
             results.add(BoilerplateDTO(2, "example", "2022-07-15"))
             results.add(BoilerplateDTO(4, "example 2", "2022-07-15"))
             
-            resultEntitys.add(BoilerplateEntity(2, "example", "2022-07-15".convertStringToDate()))
+            resultEntitys.add(BoilerplateModel(2, "example", "2022-07-15".convertStringToDate()))
             pagedResponse = PageImpl(results)
         }
     }
@@ -63,7 +63,7 @@ class BoilerplateServiceTest {
         val boilerplateEntity = resultEntitys[0]
         val boilerplateDTO = results[0]
 
-        `when`(repository.save(any(BoilerplateEntity::class.java))).thenReturn(boilerplateEntity)
+        `when`(repository.save(any(BoilerplateModel::class.java))).thenReturn(boilerplateEntity)
 
         assertEquals("example",
             service.salvarBoilerplate(boilerplateDTO).nome)
