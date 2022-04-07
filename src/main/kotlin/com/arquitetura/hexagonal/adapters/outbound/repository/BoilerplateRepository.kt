@@ -1,6 +1,6 @@
 package com.arquitetura.hexagonal.adapters.outbound.repository
 
-import com.arquitetura.hexagonal.application.model.BoilerplateModel
+import com.arquitetura.hexagonal.adapters.model.BoilerplateModel
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import org.springframework.data.jpa.domain.Specification

@@ -1,6 +1,6 @@
 package com.arquitetura.hexagonal.adapters.outbound.integration
 
-import com.arquitetura.hexagonal.application.model.BoilerplateModel
+import com.arquitetura.hexagonal.adapters.model.BoilerplateModel
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.data.domain.Pageable
 import org.springframework.http.HttpStatus

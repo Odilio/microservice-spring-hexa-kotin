@@ -2,7 +2,7 @@ package com.arquitetura.hexagonal.application.service
 
 import com.arquitetura.hexagonal.adapters.dto.BoilerplateMapper
 import com.arquitetura.hexagonal.adapters.mapper.Converter
-import com.arquitetura.hexagonal.application.model.BoilerplateModel
+import com.arquitetura.hexagonal.adapters.model.BoilerplateModel
 import com.arquitetura.hexagonal.ports.`in`.BoilerplateServicePort
 import com.arquitetura.hexagonal.ports.out.BoilerplatePersistencePort
 import org.springframework.beans.factory.annotation.Autowired
@@ -36,8 +36,7 @@ class BoilerplateService: BoilerplateServicePort {
     }
 
     override fun salvarBoilerplate(boilerplate: BoilerplateMapper): BoilerplateMapper {
-        val boilerplateModel: BoilerplateModel = Converter.toModel(boilerplate, BoilerplateModel::class.java)
-        val boilerplateSalvo = boilerplateAdapter.save(boilerplateModel)
+        val boilerplateSalvo = boilerplateAdapter.save(boilerplate)
         return Converter.toModel(boilerplateSalvo, BoilerplateMapper::class.java)
     }
 

@@ -1,7 +1,7 @@
 package com.arquitetura.hexagonal.adapters.outbound
 
 import com.arquitetura.hexagonal.adapters.outbound.integration.BaseServiceIntegration
-import com.arquitetura.hexagonal.application.model.BoilerplateModel
+import com.arquitetura.hexagonal.adapters.model.BoilerplateModel
 import com.arquitetura.hexagonal.ports.out.BoilerplateIntegrationPort
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.domain.Page

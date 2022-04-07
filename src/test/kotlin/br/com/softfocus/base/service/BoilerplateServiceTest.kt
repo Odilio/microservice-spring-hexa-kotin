@@ -2,7 +2,7 @@ package com.arquitetura.hexagonal.service
 
 import com.arquitetura.hexagonal.adapters.dto.BoilerplateDTO
 import com.arquitetura.hexagonal.adapters.dto.BoilerplateMapper
-import com.arquitetura.hexagonal.application.model.BoilerplateModel
+import com.arquitetura.hexagonal.adapters.model.BoilerplateModel
 import com.arquitetura.hexagonal.application.service.BoilerplateService
 import com.arquitetura.hexagonal.adapters.outbound.repository.BoilerplateRepository
 import com.arquitetura.hexagonal.application.extensions.convertStringToDate

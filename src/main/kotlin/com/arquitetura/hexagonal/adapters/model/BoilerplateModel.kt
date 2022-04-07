@@ -1,4 +1,4 @@
-package com.arquitetura.hexagonal.application.model
+package com.arquitetura.hexagonal.adapters.model
 
 import org.springframework.data.jpa.repository.Temporal
 import java.util.*

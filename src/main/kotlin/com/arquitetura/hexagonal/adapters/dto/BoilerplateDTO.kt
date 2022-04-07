@@ -1,6 +1,6 @@
 package com.arquitetura.hexagonal.adapters.dto
 
-import com.arquitetura.hexagonal.application.model.BoilerplateModel
+import com.arquitetura.hexagonal.adapters.model.BoilerplateModel
 import com.arquitetura.hexagonal.application.extensions.format
 import java.util.*
 

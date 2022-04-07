@@ -1,7 +1,9 @@
 package com.arquitetura.hexagonal.adapters.outbound
 
+import com.arquitetura.hexagonal.adapters.dto.BoilerplateMapper
+import com.arquitetura.hexagonal.adapters.mapper.Converter
 import com.arquitetura.hexagonal.adapters.outbound.repository.BoilerplateRepository
-import com.arquitetura.hexagonal.application.model.BoilerplateModel
+import com.arquitetura.hexagonal.adapters.model.BoilerplateModel
 import com.arquitetura.hexagonal.ports.out.BoilerplatePersistencePort
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.domain.Page
@@ -27,8 +29,9 @@ class BoilerplatePersistenceAdapter: BoilerplatePersistencePort {
         return boilerplateRepository.findAllFields(search, page)
     }
 
-    override fun save(boilerplate: BoilerplateModel): BoilerplateModel {
-        return boilerplateRepository.save(boilerplate)
+    override fun save(boilerplate: BoilerplateMapper): BoilerplateModel {
+        val boilerplateModel: BoilerplateModel = Converter.toModel(boilerplate, BoilerplateModel::class.java)
+        return boilerplateRepository.save(boilerplateModel)
     }
 
     override fun deleteById(id: Long) {
