@@ -3,12 +3,12 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh './mvnw clean package -Dcheckstyle.skip'
+         sh 'docker build --tag java-docker:latest .'
       }
     }
     stage('Scan') {
       steps {
-        sh 'grype dir:. --scope AllLayers'
+        sh 'grype java-docker:latest --scope AllLayers'
       }
     }
   }
