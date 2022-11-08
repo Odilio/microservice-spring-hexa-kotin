@@ -16,7 +16,7 @@ interface BoilerplateRepository : JpaRepository<BoilerplateModel, Long> {
 
     @Query(
         """
-        SELECT u FROM BoilerplateEntity u WHERE 
+        SELECT u FROM BoilerplateModel u WHERE 
             CAST(u.id as text) like upper(CONCAT('%',:search,'%')) 
             or upper(u.nome) like upper(CONCAT('%',:search,'%'))
             or to_char(u.dataUltimaAtualizacao, 'dd/MM/yyyy') like CONCAT('%',:search,'%')
