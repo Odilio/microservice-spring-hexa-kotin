@@ -16,8 +16,8 @@
 
 	<properties>
 		<java.version>17</java.version>
-		<kotlin.version>1.6.20</kotlin.version>
-		<spring-cloud.version>2021.0.1</spring-cloud.version>
+		<kotlin.version>1.7.20</kotlin.version>
+		<spring-cloud.version>2021.0.5</spring-cloud.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
